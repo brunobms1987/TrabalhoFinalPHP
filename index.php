@@ -10,9 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        echo "Hello World";
-        ?>
+        <a href="listar.php">Exibir Usuários</a><br>
+        <a href="cadastrar.php">Cadastrar Usuarios</a><br>
     </body>
 </html>
