@@ -12,5 +12,6 @@ and open the template in the editor.
     <body>
         <a href="listar.php">Exibir Usuários</a><br>
         <a href="cadastrar.php">Cadastrar Usuarios</a><br>
+        <a href="login.php">Efetuar Login</a><br>
     </body>
 </html>
