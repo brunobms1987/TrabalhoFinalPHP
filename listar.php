@@ -1,20 +1,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-    <form action ="listar.php">
-        Registros: <select name="Registros" onload="<?= $regPagina ?>">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-        </select>
-        <input type="submit" value="Atualizar Lista">
-        <?php 
-        setcookie("registrosTela", $regPagina);
-        ?>
-    </form>
+        <title>Listar</title>
+    
     <br>
 </head>
 <body>
