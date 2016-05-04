@@ -1,9 +1,15 @@
 <?php
-
+//Banco de Dados Bruno (não apagar)
 $usuario = "root";
-$base = "aulaphp";
+$base = "finalweb1";
 $senha = "1601.bms";
 $servidor = "localhost";
+
+//Banco de Dados Brigo
+//$usuario = "root";
+//$base = "finalweb1";
+//$senha = "";
+//$servidor = "localhost";
 
 /**
  * Função que conecta com o banco de dados.
