@@ -7,11 +7,18 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Selectus Web System</title>
     </head>
     <body>
-        <a href="listar.php">Exibir Usuários</a><br>
-        <a href="cadastrar.php">Cadastrar Usuarios</a><br>
         <a href="login.php">Efetuar Login</a><br>
+        <br>
+        <br>
+        <br>
+        NOTÍCIAS<br><br>
+        Exemplo de notícias....<br>
+        Exemplo de notícias....<br>
+        Exemplo de notícias....<br>
+        Exemplo de notícias....<br>
+        Exemplo de notícias....<br>
     </body>
 </html>

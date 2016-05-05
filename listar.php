@@ -1,12 +1,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Listar</title>
-    
+        <title>Usuários - Selectus Web System</title>
     <br>
 </head>
 <body>
     <?php
+    require './verifica_logado.php';
+    include './menu.php';
     if (isset($_COOKIE['registros'])) {
         $regPagina = $_COOKIE['Registros'];
     }
