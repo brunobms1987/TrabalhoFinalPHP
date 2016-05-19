@@ -8,10 +8,13 @@
     <?php
     require './verifica_logado.php';
     include './menu.php';
+    setcookie("registros", 20, time() + 10 * 60);
     if (isset($_COOKIE['registros'])) {
-        $regPagina = $_COOKIE['Registros'];
+        $regPagina = $_COOKIE['registros'];
     }
+    echo "Total de ";
     echo $regPagina;
+    echo " Registros <br>";
 
 //BUSCAR O TOTAL DE PESQUISAS
     include 'conexao.php';
@@ -34,7 +37,7 @@
     while ($registro = mysqli_fetch_array($resultado)) {
         echo "<a href='editar.php?id={$registro['id']}'> Editar</a> ";
         echo "<a href='excluir.php?id={$registro['id']}'> Excluir</a> ";
-        echo $registro['id'] . " - " . $registro['nome'] . " - " . $registro['email'] . "<br>";
+        echo $registro['id'] . " - " . $registro['usuarios_nome'] . " - " . $registro['usuarios_email'] . "<br>";
     }
     desconecta($conexao);
     //LINKS DE PAGINAÇÃO
@@ -69,5 +72,7 @@
                 Última
                    </a>";
     ?>
+    <br><br>
+    <a href="cadastrar.php">Cadastrar Usuário</a><br>
 </body>
 </html>

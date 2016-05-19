@@ -18,12 +18,23 @@ and open the template in the editor.
         $registro = mysqli_fetch_array($resultado);
         ?>
         <form method="post" action="salvar.php?acao=2">
-            <input type="text" name="id" value="<?=$registro['id']?>" hidden=""><br>
-            Nome do Pinguancho: <input type="text" name="nome" value="<?= $registro['nome']?>" required><br>
-            Senha: <input type="password" name="senha" value="<?= $registro['senha'] ?>" required><br>
-            E-Mail: <input type="email" name="email" value="<?= $registro['email'] ?>" required><br>
-            <input type="submit" value="Enviar"/><br>
+            <input type="text" name="id" value="<?= $registro['id'] ?>" hidden=""><br>
+            Nome do Pinguancho: <input type="text" name="nome" value="<?= $registro['usuarios_nome'] ?>" required><br>
+            Senha: <input type="password" name="senha" value="<?= $registro['usuarios_senha'] ?>" required><br>
+            E-Mail: <input type="email" name="email" value="<?= $registro['usuarios_email'] ?>" required><br>
+            Nascimento: <input type="date" name="nascimento" value="<?= $registro['usuarios_data_nascimento'] ?>" required><br>
+
+            <?php if ($registro['usuarios_tipo'] == 1) { ?>
+                Administrador <input type="radio" name="tipo" value="1" checked="checked"/>
+                Autor <input type="radio" name="tipo" value="2"/>
+            <?php } if ($registro['usuarios_tipo'] == 2) {
+                ?>
+                Administrador <input type="radio" name="tipo" value="1"/>
+                Autor <input type="radio" name="tipo" value="2" checked="checked"/>
+                <?php
+            }
+            ?>
+            <br><br><input type="submit" value="Salvar"/><br>
         </form>
-       
-    </body>
+    </body>     
 </html>

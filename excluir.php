@@ -19,6 +19,7 @@ and open the template in the editor.
             echo "Usuário excluído.";
         } else
             echo "Usuário não excluído.";
+        header("location:listar.php");
         ?>
     </body>
 </html>
