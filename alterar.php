@@ -6,7 +6,6 @@ $resultado = inserir($conexao, $query);
 echo $query;
 if ($resultado) {
     echo "Usuário alterado.";
-	echo "Teste.";
 } else
     echo "Usuário não alterado.";
 ?>
