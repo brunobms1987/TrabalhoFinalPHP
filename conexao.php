@@ -2,7 +2,7 @@
 //Banco de Dados Bruno (não apagar)
 $usuario = "root";
 $base = "finalweb1";
-$senha = "1601.bms";
+$senha = "";
 $servidor = "localhost";
 
 //Banco de Dados Brigo
