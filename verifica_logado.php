@@ -1,5 +1,16 @@
 <?php
-include_once './funcoes.php';
-verifica();
 
+$nome = "";
+if (isset($_SESSION['nomeLogado'])) {
+    
+} else {
+    session_start();
+}
+
+if (!isset($_SESSION['nomeLogado']) and ! isset($_SESSION['senhaLogado'])) {
+    session_destroy();
+    header("Location:login.php");
+} else {
+    $nome = $_SESSION['nomeLogado'];
+}
 ?>

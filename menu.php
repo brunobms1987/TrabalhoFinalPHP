@@ -1,6 +1,6 @@
 <?php
 require './verifica_logado.php';
-$nome_usuario = $_COOKIE['nome_usuario'];
+$nome_usuario = $_SESSION['nomeLogado'];
 ?>
 <img src="arquivos/imagens/Logo.png" alt="" width="200"/><br>
 <?= $nome_usuario ?> - <a href="funcoes.php?sair=1">Sair</a><br>

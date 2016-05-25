@@ -8,9 +8,9 @@
         <?php
 
         function login($nome, $senha, $tempo = 10) {
-            if ($nome == "bruno" && $senha == 123) {
+            if ($nome == $_POST['nome'] && $senha == $_POST['senha']) {
                 setcookie("usuario_logado", "1", time() + $tempo * 60);
-                setcookie("nome_usuario", "bruno", time() + $tempo * 60);
+                setcookie("nome_usuario", $nome, time() + $tempo * 60);
                 header("Location:listar.php");
             } else {
                 setcookie("usuario_logado", null, time() - 3600);
