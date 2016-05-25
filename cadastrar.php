@@ -5,7 +5,8 @@ include './menu.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" href="arquivos/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <title>Cadastrar</title>
     </head>
     <body>
         <form class="form-horizontal" method="post" action="salvar.php?acao=1" enctype="multipart/form-data">

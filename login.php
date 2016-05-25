@@ -2,6 +2,8 @@
     <head>
         <meta charset="UTF-8">
         <title>LOGIN - Selectus Web System</title>
+        <link rel="stylesheet" href="arquivos/css/bootstrap.css"/>
+        <link rel="stylesheet" href="arquivos/css/login.css"/>
     </head>
     <body>
         <img src="arquivos/imagens/Logo.png" alt="" width="200"/>
@@ -15,9 +17,9 @@
         </form>
         <?php
         $erro_login = isset($_GET['erro']) ? $_GET['erro'] : 0;
-            if ($erro_login == 1){
-                echo "Favor verificar informações de usuário e senha.";
-            }
+        if ($erro_login == 1) {
+            echo "Favor verificar informações de usuário e senha.";
+        }
         ?>
         <br>
         <br>
