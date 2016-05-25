@@ -12,10 +12,7 @@
     if (isset($_COOKIE['registros'])) {
         $regPagina = $_COOKIE['registros'];
     }
-    echo "Total de ";
-    echo $regPagina;
-    echo " Registros <br>";
-
+    
 //BUSCAR O TOTAL DE PESQUISAS
     include 'conexao.php';
     $conexao = conecta();
