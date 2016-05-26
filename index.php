@@ -1,24 +1,67 @@
+<?php
+include_once './config/conexao.php';
+include_once './paginacao.php';
+?>
+
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Selectus Web System</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            function confirmar(id) {
+                var r = confirm("Tem certeza que deseja apagar este registro?");
+                if (r == true) {
+                    window.location.href = "index.php?id=" + id;
+                }
+            }
+        </script>
+        <style>
+            @media print {
+                body * {
+                    visibility: hidden;
+                }
+                #div_impressao, #div_impressao * {
+                    visibility: visible;
+                }
+                #div_impressao-to-print {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        </style>
+        <title></title>
     </head>
     <body>
-        <a href="login.php">Efetuar Login</a><br>
-        <br>
-        <br>
-        <br>
-        NOTÍCIAS<br><br>
-        Exemplo de notícias....<br>
-        Exemplo de notícias....<br>
-        Exemplo de notícias....<br>
-        Exemplo de notícias....<br>
-        Exemplo de notícias....<br>
+        <div class="container">
+            <header>
+                <?php include './header.php'; ?>
+            </header>
+            <article>
+                <div class="jumbotron">
+                    <?php include $url; ?>
+                </div>
+                <!-- fim jumbottom -->
+            </article>
+
+            <footer>
+
+            </footer>
+
+
+        </div> <!-- fim container -->
+
+
+
+
+
+
+
+
     </body>
 </html>

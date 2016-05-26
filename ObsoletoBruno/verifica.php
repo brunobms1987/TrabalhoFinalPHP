@@ -15,6 +15,6 @@ if (mysqli_num_rows($resultado) > 0) {
     header('Location:listar.php');
 } else {
     desconecta($conexao);
-    header('Location:login.php');
+    header('Location:login.php?erro=1');
 }
 ?>

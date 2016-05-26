@@ -2,6 +2,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Usuários - Selectus Web System</title>
+        <link rel="stylesheet" href="arquivos/css/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="arquivos/js/bootstrap.min.js"></script>
     <br>
 </head>
 <body>
@@ -12,7 +15,7 @@
     if (isset($_COOKIE['registros'])) {
         $regPagina = $_COOKIE['registros'];
     }
-    
+
 //BUSCAR O TOTAL DE PESQUISAS
     include 'conexao.php';
     $conexao = conecta();

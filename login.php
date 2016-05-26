@@ -1,28 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>LOGIN - Selectus Web System</title>
-        <link rel="stylesheet" href="arquivos/css/bootstrap.css"/>
-        <link rel="stylesheet" href="arquivos/css/login.css"/>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/login.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <img src="arquivos/imagens/Logo.png" alt="" width="200"/>
-        <br>
-        <br>
-        <form name="formulario" method="POST" action="verifica.php">
-            Nome: <input type="text" name="nome" required/>        
-            Senha: <input type="password" name="senha" required/>
-            <br><br>
-            <input type="submit" name="Enviar" value="Entrar no Sistema" required/>
-        </form>
-        <?php
-        $erro_login = isset($_GET['erro']) ? $_GET['erro'] : 0;
-        if ($erro_login == 1) {
-            echo "Favor verificar informações de usuário e senha.";
-        }
-        ?>
-        <br>
-        <br>
-        <a href="index.php">Notícias</a><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" >     
+                    <div class="account-wall">                       
+                        <form class="form-signin" method="post" action="index.php">
+                            <input type="text" name="usuario" class="form-control" placeholder="Email" autofocus>
+                            <input type="password" name="senha" class="form-control" placeholder="Senha" >
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

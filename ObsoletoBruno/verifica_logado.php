@@ -9,7 +9,7 @@ if (isset($_SESSION['nomeLogado'])) {
 
 if (!isset($_SESSION['nomeLogado']) and ! isset($_SESSION['senhaLogado'])) {
     session_destroy();
-    header("Location:login.php");
+    header("Location:login.php?erro=1");
 } else {
     $nome = $_SESSION['nomeLogado'];
 }
