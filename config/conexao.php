@@ -5,8 +5,6 @@ $usuario = "root";
 $senha = "";
 $host = "localhost";
 
-
-
 function conecta() {
     global $banco, $host, $usuario, $senha;
     try {
@@ -26,6 +24,7 @@ function busca($conexao, $query) {
         return NULL;
     }
 }
+
 function exclui($conexao, $query) {
     try {
         return mysqli_query($conexao, $query);
@@ -34,7 +33,6 @@ function exclui($conexao, $query) {
         return NULL;
     }
 }
-
 
 function insere($conexao, $query) {
     try {

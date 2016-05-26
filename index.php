@@ -1,8 +1,8 @@
 <?php
 include_once './config/conexao.php';
+include_once './verifica_logado.php';
 include_once './paginacao.php';
 ?>
-
 
 <!DOCTYPE html>
 
@@ -55,13 +55,6 @@ include_once './paginacao.php';
 
 
         </div> <!-- fim container -->
-
-
-
-
-
-
-
 
     </body>
 </html>

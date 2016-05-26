@@ -11,7 +11,7 @@
                 <div class="col-md-4" >
                     <div class="row">                       
                             <div class="col-md-12">
-                                Bem vindo Fulano - <a href="logout.php"> Sair do sistema </a>
+                                Bem vindo  - <a href="logout.php"> Sair do sistema </a>
                             </div>
                         
                     </div>   

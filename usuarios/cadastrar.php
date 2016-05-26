@@ -16,7 +16,7 @@
 
 <div class="container-fluid">
     <div class="container">
-        <form action="index.php?pag=6&acao=2" method="POST"  enctype="multipart/form-data">
+        <form action="index.php?pag=6&acao=1" method="POST"  enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-4">
                     <label for="nome">Nome completo</label>

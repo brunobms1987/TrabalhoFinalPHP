@@ -1,16 +1,15 @@
 <?php
 
 $nome = "";
-if (isset($_SESSION['nomeLogado'])) {
-    
-} else {
-    session_start();
-}
+
+session_start();
 
 if (!isset($_SESSION['nomeLogado']) and ! isset($_SESSION['senhaLogado'])) {
     session_destroy();
-    header("Location:login.php?erro=1");
+    header("Location:login.php");
 } else {
+
     $nome = $_SESSION['nomeLogado'];
+    print_r($_SESSION);
 }
 ?>

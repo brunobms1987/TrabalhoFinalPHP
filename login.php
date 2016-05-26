@@ -18,13 +18,19 @@ and open the template in the editor.
             <div class="row">
                 <div class="col-md-12" >     
                     <div class="account-wall">                       
-                        <form class="form-signin" method="post" action="index.php">
+                        <form class="form-signin" method="post" action="verifica.php">
                             <input type="text" name="usuario" class="form-control" placeholder="Email" autofocus>
                             <input type="password" name="senha" class="form-control" placeholder="Senha" >
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
 
                         </form>
-                        
+                        <?php
+                        $erro_login = isset($_GET['erro']) ? $_GET['erro'] : 0;
+                        if ($erro_login == 1) {
+                            echo "Favor verificar informações de usuário e senha.";
+                        }
+                        ?>
+
                     </div>
                 </div>
             </div>

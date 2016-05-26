@@ -49,7 +49,7 @@ if (isset($_POST['gerador']) && !empty($_POST['gerador'])) {
 //SE A ACAO PASSADA POR GET( NOS FORMULÁRIOS ) FOR 1, É CADASTRO NOVO, SENÃO É EDIÇÃO
 if($_GET['acao']==1){
     $query = "INSERT INTO usuario (nome, usuario, email, senha, tipo, descricao, foto, dataNasc)  "
-        . "VALUES ('{$_POST['nome']}', '{$_POST['usuario']}', '{$_POST['email']}', '$senha', {$_POST['tipo']},'{$_POST['descricao']}' ,'{$nomenovo}', {$_POST['datanasc']});";
+        . "VALUES ('{$_POST['nome']}', '{$_POST['usuario']}', '{$_POST['email']}', '$senha', {$_POST['tipo']},'{$_POST['descricao']}' ,'{$nomenovo}', '{$_POST['datanasc']}');";
 }
 else{
     if($nomenovo==null || $nomenovo=="")

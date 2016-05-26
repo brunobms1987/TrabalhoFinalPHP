@@ -87,11 +87,11 @@ $usuario = mysqli_fetch_array($resultado);
 </div>
 <script>
     function imprimir(divName) {
-        var divImpressao = document.getElementById('div_impressao');     
+        var divImpressao = document.getElementById('div_impressao');
         var janela = window.open('', '_blank', 'width=500px');
         janela.document.open();
         janela.document.write('<html><body onload="window.print()">' + divImpressao.innerHTML + '</html>');
         janela.document.close();
-       
+
     }
 </script>
