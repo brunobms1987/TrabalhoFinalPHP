@@ -11,7 +11,6 @@
             }
         });
     });
-
 </script>
 
 <div class="container-fluid">
@@ -68,10 +67,8 @@
             </div>   
             <div class="row">
                 <div class="col-md-8">
-
                     <label for="descricao">Descrição</label>
                     <textarea id="descricao" class="form-control" name="descricao">
-                        
                     </textarea>   
                 </div>                
             </div>   
@@ -85,7 +82,7 @@
 </div>
 <br>
 <br>
-<a href="index.php" class="btn btn-danger"> Cancelar e Voltar </a>
+<a href="index.php?pag=4" class="btn btn-danger"> Cancelar e Voltar </a>
 <input type="submit"  class="btn btn-success" value="Cadastrar">
 
 </form>
