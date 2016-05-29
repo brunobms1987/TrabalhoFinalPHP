@@ -30,6 +30,7 @@ $usuario = mysqli_fetch_array($resultado);
                     <table class="table">
                         <tbody><tr  style="background-color:#6495ED;">
                                 <th>Código</th>
+                                <th>Usuário</th>
                                 <th>Nome</th>
                                 <th>Email</th>                   
                                 <th>Data de Nascimento</th>
@@ -37,6 +38,7 @@ $usuario = mysqli_fetch_array($resultado);
 
                             <tr>
                                 <td><?= $usuario['id']; ?></td>
+                                <td><?= $usuario['usuario']; ?></td>
                                 <td><?= $usuario['nome']; ?></td>
                                 <td>
                                     <?= $usuario['email']; ?>

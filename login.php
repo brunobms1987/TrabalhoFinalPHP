@@ -13,13 +13,13 @@ and open the template in the editor.
         <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12" >     
                     <div class="account-wall">                       
                         <form class="form-signin" method="post" action="verifica.php">
-                            <input type="text" name="usuario" class="form-control" placeholder="Email" autofocus>
+                            <img src="img/logo.png" width="290"><br><br>
+                            <input type="text" name="usuario" class="form-control" placeholder="Usuário" autofocus>
                             <input type="password" name="senha" class="form-control" placeholder="Senha" >
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
 

@@ -5,6 +5,7 @@
         <table class="table">
             <tbody><tr  style="background-color:#6495ED;">
                     <th>Código</th>
+                    <th>Usuário</th>
                     <th>Nome</th>
                     <th>Tipo</th>                   
                     <th>Ações</th>
@@ -40,6 +41,7 @@
                     ?> 
                     <tr style="background-color:<?= $i % 2 == 0 ? $cor1 : $cor2; ?>">
                         <td><?= $linha['id']; ?></td>
+                        <td><?= $linha['usuario']; ?></td>
                         <td><?= $linha['nome']; ?></td>
                         <td>
                             <?= $linha['tipo'] == 1 ? "Adminsitrador" : "Autor"; ?>

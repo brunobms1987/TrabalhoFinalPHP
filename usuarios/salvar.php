@@ -44,18 +44,16 @@ if (isset($_POST['gerador']) && !empty($_POST['gerador'])) {
 }
 
 //FIM - SCRIPT DA SENHA (VERIFICA SE É GERAÇÃO AUTOMÁTICA OU FOI PASSADA
-
 //INÍCIO - SCRIPT DE INSERÇÃO NO BANCO
 //SE A ACAO PASSADA POR GET( NOS FORMULÁRIOS ) FOR 1, É CADASTRO NOVO, SENÃO É EDIÇÃO
-if($_GET['acao']==1){
-    $query = "INSERT INTO usuario (nome, usuario, email, senha, tipo, descricao, foto, dataNasc)  "
-        . "VALUES ('{$_POST['nome']}', '{$_POST['usuario']}', '{$_POST['email']}', '$senha', {$_POST['tipo']},'{$_POST['descricao']}' ,'{$nomenovo}', '{$_POST['datanasc']}');";
-}
-else{
-    if($nomenovo==null || $nomenovo=="")
-        $nomenovo=$_POST['fotoantiga'];
-   $query = "UPDATE usuario set nome='{$_POST['nome']}', usuario='{$_POST['usuario']}', email='{$_POST['email']}', senha='$senha', tipo={$_POST['tipo']}, descricao='{$_POST['descricao']}' , "
-   . "foto='{$nomenovo}', dataNasc='{$_POST['datanasc']}' where id={$_POST['id']} "; 
+if ($_GET['acao'] == 1) {
+    $query = "INSERT INTO usuario (nome, usuario, email, senha, tipo, descricao, foto, datanasc)  "
+            . "VALUES ('{$_POST['nome']}', '{$_POST['usuario']}', '{$_POST['email']}', '$senha', '{$_POST['tipo']}','{$_POST['descricao']}' ,'{$nomenovo}', '{$_POST['datanasc']}');";
+} else {
+    if ($nomenovo == null || $nomenovo == "")
+        $nomenovo = $_POST['fotoantiga'];
+    $query = "UPDATE usuario set nome='{$_POST['nome']}', usuario='{$_POST['usuario']}', email='{$_POST['email']}', senha='$senha', tipo='{$_POST['tipo']}', descricao='{$_POST['descricao']}', "
+            . "foto='{$nomenovo}', dataNasc='{$_POST['datanasc']}' where id={$_POST['id']} ";
 }
 
 echo $query;
@@ -71,5 +69,4 @@ if ($resultado) {
 //FIM - SCRIPT DE INSERÇÃO NO BANCO
 
 desconecta($conexao);
-
 ?>

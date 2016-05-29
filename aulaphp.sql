@@ -1,3 +1,6 @@
+CREATE DATABASE `aulaphp` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE aulaphp
 -- phpMyAdmin SQL Dump
 -- version 4.2.11
 -- http://www.phpmyadmin.net
@@ -32,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `usuario` varchar(80) NOT NULL,
   `senha` varchar(80) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `tipo` bit(1) NOT NULL COMMENT '1- admin, 2 - padrão',
+  `tipo` int NOT NULL COMMENT '1- admin, 2 - padrão',
   `descricao` text NOT NULL,
   `foto` varchar(100) DEFAULT NULL,
   `dataNasc` date NOT NULL
@@ -43,8 +46,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `usuario`, `senha`, `email`, `tipo`, `descricao`, `foto`, `dataNasc`) VALUES
-(5, 'Paciente teste', 'admin123', 'YYANg', 'edersonbastiani@gmail.com', b'1', '123123123', 'semfoto.png', '0000-00-00'),
-(6, 'Paciente teste EDITADO', 'admin123', 'zGkX9', 'edersonbastiani@gmail.com', b'1', '                                                                        123123123                                                            ', '2016.05.25.21.38.28.png', '2016-05-25');
+(1, 'Bruno Martins', 'bruno', '1234', 'brunobms1987@gmail.com', '1', 'Usuário do Bruno', 'semfoto.png', '1987-01-16'),
+(2, 'Carlos Brigo', 'brigo', '5678', 'brigo.d@gmail.com', '1', 'Brigo User', 'semfoto.png', '1950-01-01');
 
 --
 -- Indexes for dumped tables

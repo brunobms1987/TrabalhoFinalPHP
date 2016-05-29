@@ -10,6 +10,5 @@ if (!isset($_SESSION['nomeLogado']) and ! isset($_SESSION['senhaLogado'])) {
 } else {
 
     $nome = $_SESSION['nomeLogado'];
-    print_r($_SESSION);
 }
 ?>
