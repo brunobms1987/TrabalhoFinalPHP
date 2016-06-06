@@ -70,7 +70,9 @@ $usuario = mysqli_fetch_array($resultado);
             <div class="row">
                 <div class="col-md-12">
                     <b> Usuário desde: </b>
-
+                    <?= 
+                    date('d/m/Y', strtotime($usuario['dataCadastro']));
+                    ?>
                 </div>
             </div>
             <div class="row">

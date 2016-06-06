@@ -14,12 +14,18 @@
                 <?php
                 $conexao = conecta();
                 include_once './verifica_logado.php';
-                //sou admistrador??
-                $resultado = busca($conexao, "SELECT id,nome, tipo from usuario");
+                $tipoUser = $_SESSION['tipoLogado'];
+                $id = $_SESSION['idLogado'];
+                if ($tipoUser == 1) {
+                    $resultado = busca($conexao, "SELECT id,nome, usuario, tipo from usuario");
+                } else if ($tipoUser != 1) {
+                    $resultado = busca($conexao, "SELECT id,nome, usuario, tipo from usuario where id=$id");
+                }
 
                 //sou usuário comum??
                 // $resultado = busca($conexao, "SELECT id,nome, tipo from usuario where id=id de quem ta logado");
                 //para paginação
+
                 $total = mysqli_num_rows($resultado);
                 $qtdPorPagina = 10;
 
@@ -30,9 +36,8 @@
                 $pagAtual = isset($_GET['list']) ? $_GET['list'] : 1;
                 $inicio = ($qtdPorPagina * $pagAtual) - $qtdPorPagina;
 
-                $query = "select * from usuario limit $inicio, $qtdPorPagina";
-
-                $resultado = busca($conexao, $query);
+                //$query = "select * from usuario limit $inicio, $qtdPorPagina";
+                //$resultado = busca($conexao, $query);
 
                 $i = 0;
                 $cor1 = "#D3D3D3;";
@@ -87,10 +92,10 @@
             echo " <a href='index.php?pag=4&list=" . ($pagAtual + 1) . "'>Próxima</a> ";
 
         echo " <a href='index.php?pag=4&list=$paginas'>Última</a> ";
-        ?>
 
-        <br>
-        <a href="index.php?pag=5">Cadastrar novo Usuário</a>
+        if ($tipoUser == 1)
+            echo " <a href='index.php?pag=5'><br>Cadastrar Novo Usuário</a> ";
+        ?>
     </div>
 </div>
 

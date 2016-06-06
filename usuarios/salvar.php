@@ -1,9 +1,10 @@
 <?php
 
 $conexao = conecta();
-
+date_default_timezone_set('America/Sao_Paulo');
 //INÍCIO - CRIAÇÃO DO DESTINO DOS UPLOADS
 $destino = "uploads/";
+$hoje = date('Y/m/d');
 
 if (!file_exists($destino))
     mkdir($destino);
@@ -47,8 +48,8 @@ if (isset($_POST['gerador']) && !empty($_POST['gerador'])) {
 //INÍCIO - SCRIPT DE INSERÇÃO NO BANCO
 //SE A ACAO PASSADA POR GET( NOS FORMULÁRIOS ) FOR 1, É CADASTRO NOVO, SENÃO É EDIÇÃO
 if ($_GET['acao'] == 1) {
-    $query = "INSERT INTO usuario (nome, usuario, email, senha, tipo, descricao, foto, datanasc)  "
-            . "VALUES ('{$_POST['nome']}', '{$_POST['usuario']}', '{$_POST['email']}', '$senha', '{$_POST['tipo']}','{$_POST['descricao']}' ,'{$nomenovo}', '{$_POST['datanasc']}');";
+    $query = "INSERT INTO usuario (nome, usuario, email, senha, tipo, descricao, foto, datanasc, dataCadastro)  "
+            . "VALUES ('{$_POST['nome']}', '{$_POST['usuario']}', '{$_POST['email']}', '$senha', '{$_POST['tipo']}','{$_POST['descricao']}' ,'{$nomenovo}', '{$_POST['datanasc']}', '{$hoje}');";
 } else {
     if ($nomenovo == null || $nomenovo == "")
         $nomenovo = $_POST['fotoantiga'];
@@ -56,12 +57,11 @@ if ($_GET['acao'] == 1) {
             . "foto='{$nomenovo}', dataNasc='{$_POST['datanasc']}' where id={$_POST['id']} ";
 }
 
-echo $query;
-
 $resultado = insere($conexao, $query);
 
 if ($resultado) {
     echo "Salvo com sucesso";
+    echo "Usuário: " . $_POST['usuario'] . " | Senha: " . $senha;
 } else
     echo "Erro ao cadastrar";
 

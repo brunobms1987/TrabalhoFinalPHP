@@ -9,6 +9,8 @@ if (mysqli_num_rows($resultado) > 0) {
     session_start();
 
     $_SESSION['loginLogado'] = $linha['usuario'];
+    $_SESSION['idLogado'] = $linha['id'];
+    $_SESSION['tipoLogado'] = $linha['tipo'];
     $_SESSION['senhaLogado'] = $linha['senha'];
     $_SESSION['nomeLogado'] = $linha['nome'];
     desconecta($conexao);

@@ -22,14 +22,15 @@ and open the template in the editor.
                             <input type="text" name="usuario" class="form-control" placeholder="Usuário" autofocus>
                             <input type="password" name="senha" class="form-control" placeholder="Senha" >
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
-
+                            <br>
+                            <?php
+                            $erro_login = isset($_GET['erro']) ? $_GET['erro'] : 0;
+                            if ($erro_login == 1) {
+                                echo "Favor verificar informações de usuário e senha.";
+                            }
+                            ?>
                         </form>
-                        <?php
-                        $erro_login = isset($_GET['erro']) ? $_GET['erro'] : 0;
-                        if ($erro_login == 1) {
-                            echo "Favor verificar informações de usuário e senha.";
-                        }
-                        ?>
+
 
                     </div>
                 </div>
