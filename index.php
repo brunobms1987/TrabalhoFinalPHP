@@ -1,9 +1,16 @@
+<!--Página geral...-->
 <?php
 include_once './config/conexao.php';
 include_once './verifica_logado.php';
 include_once './paginacao.php';
-?>
+$tipoUser = 0;
 
+$pagComum = array(4,7,8,9);
+
+if ($tipoUser == 2 && !in_array($pagina, $pagComum)){
+header("Location:index.php?pag=4");
+}
+?>
 <!DOCTYPE html>
 
 <html>

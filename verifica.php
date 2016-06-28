@@ -1,5 +1,5 @@
+<!--Página geral...-->
 <?php
-
 include './config/conexao.php';
 $conexao = conecta();
 $query = "select * from usuario where usuario='{$_POST['usuario']}' and senha='{$_POST['senha']}'";
@@ -7,7 +7,6 @@ $resultado = mysqli_query($conexao, $query);
 if (mysqli_num_rows($resultado) > 0) {
     $linha = mysqli_fetch_array($resultado);
     session_start();
-
     $_SESSION['loginLogado'] = $linha['usuario'];
     $_SESSION['idLogado'] = $linha['id'];
     $_SESSION['tipoLogado'] = $linha['tipo'];

@@ -1,14 +1,12 @@
-<!--Página referente aos: Usuários-->
+<!--Página referente às notícias...-->
 <div class="container">
     <div class="row">
 
 
         <table class="table">
             <tbody><tr  style="background-color:#6495ED;">
-                    <th>Código</th>
-                    <th>Usuário</th>
-                    <th>Nome</th>
-                    <th>Tipo</th>                   
+                    <th>Número</th>
+                    <th>Titulo</th>
                     <th>Ações</th>
                 </tr>
 
@@ -18,9 +16,9 @@
                 $tipoUser = $_SESSION['tipoLogado'];
                 $id = $_SESSION['idLogado'];
                 if ($tipoUser == 1) {
-                    $resultado = busca($conexao, "SELECT id,nome, usuario, tipo from usuario");
+                    $resultado = busca($conexao, "SELECT id, titulo, noticia from noticia");
                 } else if ($tipoUser != 1) {
-                    $resultado = busca($conexao, "SELECT id,nome, usuario, tipo from usuario where id=$id");
+                    $resultado = busca($conexao, "SELECT id, titulo, noticia from noticia where idAutor=$id");
                 }
 
                 //sou usuário comum??
@@ -47,17 +45,12 @@
                     ?> 
                     <tr style="background-color:<?= $i % 2 == 0 ? $cor1 : $cor2; ?>">
                         <td><?= $linha['id']; ?></td>
-                        <td><?= $linha['usuario']; ?></td>
-                        <td><?= $linha['nome']; ?></td>
-                        <td>
-                            <?= $linha['tipo'] == 1 ? "Administrador" : "Autor"; ?>
-                        </td>
+                        <td><?= $linha['titulo']; ?></td>                        
 
                         <td>
-                            <a  href="index.php?pag=7&id=<?= $linha['id']; ?>" title="Visualizar <?= $linha['nome']; ?>">Visualizar</a> |
-
-                            <a  href="index.php?pag=8&id=<?= $linha['id']; ?>" title="Editar <?= $linha['nome']; ?>">Editar</a> | 
-                            <a  href="usuarios/apagar.php?id=<?= $linha['id']; ?>" title="Apagar <?= $linha['nome']; ?>">Apagar</a>
+                            <a  href="index.php?pag=12&id=<?= $linha['id']; ?>" title="Visualizar <?= $linha['nome']; ?>">Visualizar</a> |
+                            <a  href="index.php?pag=13&id=<?= $linha['id']; ?>" title="Editar <?= $linha['nome']; ?>">Editar</a> | 
+                            <a  href="noticias/apagar.php?id=<?= $linha['id']; ?>" title="Apagar <?= $linha['nome']; ?>">Apagar</a>
 
                         </td>
                     </tr>
@@ -71,9 +64,9 @@
 
         </table>
         <?php
-        echo "<a href='index.php?pag=4&list=1'>Primeira</a> ";
+        echo "<a href='index.php?pag=9&list=1'>Primeira</a> ";
         if ($pagAtual > 1)
-            echo " <a href='index.php?pag=4&list=" . ($pagAtual - 1) . "'>Anterior</a> ";
+            echo " <a href='index.php?pag=9&list=" . ($pagAtual - 1) . "'>Anterior</a> ";
 
 
         $select = " <select name='selecao_lista' id='selecao_lista' onchange=\"direcionar()\">";
@@ -90,12 +83,12 @@
         echo "Ir para página " . $select;
 
         if ($pagAtual + 1 <= $paginas)
-            echo " <a href='index.php?pag=4&list=" . ($pagAtual + 1) . "'>Próxima</a> ";
+            echo " <a href='index.php?pag=9&list=" . ($pagAtual + 1) . "'>Próxima</a> ";
 
-        echo " <a href='index.php?pag=4&list=$paginas'>Última</a> ";
+        echo " <a href='index.php?pag=9&list=$paginas'>Última</a> ";
 
-        if ($tipoUser == 1)
-            echo " <a href='index.php?pag=5'><br>Cadastrar Novo Usuário</a> ";
+        //if ($tipoUser == 1)
+        echo " <a href='index.php?pag=10'><br>Cadastrar Novo Notícia</a> ";
         ?>
     </div>
 </div>
@@ -103,6 +96,6 @@
 <script>
     function direcionar() {
         var x = document.getElementById("selecao_lista").selectedIndex + 1;
-        window.location = "index.php?pag=4&list=" + x;
+        window.location = "index.php?pag=9&list=" + x;
     }
 </script>

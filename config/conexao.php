@@ -1,10 +1,9 @@
+<!--Página de configuração...-->
 <?php
-
 $banco = "aulaphp";
 $usuario = "root";
 $senha = "";
 $host = "localhost";
-
 function conecta() {
     global $banco, $host, $usuario, $senha;
     try {
@@ -14,7 +13,6 @@ function conecta() {
         return NULL;
     }
 }
-
 function busca($conexao, $query) {
     try {
         mysqli_set_charset($conexao, "utf8");
@@ -24,7 +22,6 @@ function busca($conexao, $query) {
         return NULL;
     }
 }
-
 function exclui($conexao, $query) {
     try {
         return mysqli_query($conexao, $query);
@@ -33,7 +30,6 @@ function exclui($conexao, $query) {
         return NULL;
     }
 }
-
 function insere($conexao, $query) {
     try {
         mysqli_set_charset($conexao, "utf8");
@@ -46,9 +42,7 @@ function insere($conexao, $query) {
         return false;
     }
 }
-
 function insereERetornaId($conexao, $query) {
-
     try {
         mysqli_query($conexao, $query);
         return mysqli_insert_id($conexao);
@@ -56,10 +50,7 @@ function insereERetornaId($conexao, $query) {
         return NULL;
     }
 }
-
 function desconecta($conexao) {
     mysqli_close($conexao);
 }
 ?>
-
-

@@ -1,3 +1,4 @@
+<!--Página geral...-->
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="container">
@@ -17,7 +18,7 @@
                     </div>   
                     <div class="row">                       
                         <div class="col-md-12">                               
-                            <a href="index.php?pag=4"> Usuários  </a> - <a href="#"> Notícias </a> - <a href="logout.php"> Sair do sistema </a>
+                            <a href="index.php?pag=4"> Usuários  </a> - <a href="index.php?pag=9"> Notícias </a> - <a href="logout.php"> Sair do sistema </a>
                         </div>
 
                     </div>   

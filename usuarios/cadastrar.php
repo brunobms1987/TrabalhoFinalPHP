@@ -1,3 +1,4 @@
+<!--Página referente aos: Usuários-->
 <script>
     $(document).ready(function () {
         $("#gerador").change(function () {
@@ -18,7 +19,7 @@
         <form action="index.php?pag=6&acao=1" method="POST"  enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-4">
-                    <label for="nome">Nome completo</label>
+                    <label for="nome">Nome Completo</label>
                     <input type="text" class="form-control" id="nome" name="nome" required="">
                 </div>
                 <div class="col-md-4">

@@ -1,3 +1,4 @@
+<!--Página referente aos: Usuários-->
 
 <?php
 if (!isset($_GET['id'])) {
@@ -40,14 +41,8 @@ $usuario = mysqli_fetch_array($resultado);
                                 <td><?= $usuario['id']; ?></td>
                                 <td><?= $usuario['usuario']; ?></td>
                                 <td><?= $usuario['nome']; ?></td>
-                                <td>
-                                    <?= $usuario['email']; ?>
-                                </td>
-
-                                <td>
-                                    <?= $usuario['dataNasc']; ?>
-
-                                </td>
+                                <td><?= $usuario['email']; ?></td>
+                                <td><?= date('d/m/Y', strtotime($usuario['dataNasc'])); ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -70,7 +65,7 @@ $usuario = mysqli_fetch_array($resultado);
             <div class="row">
                 <div class="col-md-12">
                     <b> Usuário desde: </b>
-                    <?= 
+                    <?=
                     date('d/m/Y', strtotime($usuario['dataCadastro']));
                     ?>
                 </div>
