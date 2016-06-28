@@ -34,10 +34,16 @@ if ($_GET['acao'] == 1) {
     $query = "INSERT INTO noticia (titulo, noticia, idAutor, imagem, dataCadastro)  "
             . "VALUES ('{$_POST['titulo']}', '{$_POST['corpo']}', '{$_POST['autor']}','{$nomenovo}', '{$hoje}');";
 } else {
-    if ($nomenovo == null || $nomenovo == "")
+    if ($nomenovo == null || $nomenovo == "") {
         $nomenovo = $_POST['fotoantiga'];
-    $query = "UPDATE noticia set titulo='{$_POST['titulo']}', noticia='{$_POST['corpo']}', idAutor={$_POST['autor']}, "
-            . "imagem='{$nomenovo}' where id={$_POST['id']} ";
+        if ($tipoUser == 1) {
+            $query = "UPDATE noticia set titulo='{$_POST['titulo']}', noticia='{$_POST['corpo']}', idAutor={$_POST['autor']}, "
+                    . "imagem='{$nomenovo}' where id={$_POST['id']} ";
+        } else {
+            $query = "UPDATE noticia set titulo='{$_POST['titulo']}', noticia='{$_POST['corpo']}', idAutor={$_SESSION['idLogado']}, "
+                    . "imagem='{$nomenovo}' where id={$_POST['id']} ";
+        }
+    }
 }
 
 $resultado = insere($conexao, $query);
@@ -49,7 +55,7 @@ if ($resultado) {
 ?>
 <br>
 <br>
-<a href = "index.php?pag=9" class = "btn btn-info"> Cancelar e Voltar </a>
+<a href = "index.php?pag=9" class = "btn btn-info"> Voltar </a>
 <?=
 //FIM - SCRIPT DE INSERÇÃO NO BANCO
 
