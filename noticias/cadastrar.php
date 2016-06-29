@@ -45,12 +45,12 @@ $linha = mysqli_fetch_array($autorNoticia);
                         <select class="form-control" id="autor" name="autor"> <!-- INCLUIR REGRA WHILE PARA IR ADICIONANDO AS OPÇÕES-->
                             <?=
                             "";
-                            while ($linha = mysqli_fetch_array($autorNoticia)) {
+                            do {
                                 ?>
                                 <option value="<?= $linha['id'] ?>"><?= $linha['nome'] ?></option>
                                 <?=
                                 "";
-                            };
+                            } while ($linha = mysqli_fetch_array($autorNoticia));
                             ?><?=
                             "";
                         } else {

@@ -34,13 +34,21 @@ if ($_GET['acao'] == 1) {
     $query = "INSERT INTO noticia (titulo, noticia, idAutor, imagem, dataCadastro)  "
             . "VALUES ('{$_POST['titulo']}', '{$_POST['corpo']}', '{$_POST['autor']}','{$nomenovo}', '{$hoje}');";
 } else {
-    if ($nomenovo == null || $nomenovo == "") {
+    if ($nomenovo != null || $nomenovo != "") {
+        if ($tipoUser == 1) {
+            $query = "UPDATE noticia set titulo='{$_POST['titulo']}', noticia='{$_POST['corpo']}', idAutor={$_POST['autor']}, "
+                    . "imagem='{$nomenovo}' where id={$_POST['id']} ";
+        } else {
+            $query = "UPDATE noticia set titulo='{$_POST['titulo']}', noticia='{$_POST['corpo']}', idAutor={$_POST['autor']}, "
+                    . "imagem='{$nomenovo}' where id={$_POST['id']} ";
+        }
+    } else {
         $nomenovo = $_POST['fotoantiga'];
         if ($tipoUser == 1) {
             $query = "UPDATE noticia set titulo='{$_POST['titulo']}', noticia='{$_POST['corpo']}', idAutor={$_POST['autor']}, "
                     . "imagem='{$nomenovo}' where id={$_POST['id']} ";
         } else {
-            $query = "UPDATE noticia set titulo='{$_POST['titulo']}', noticia='{$_POST['corpo']}', idAutor={$_SESSION['idLogado']}, "
+            $query = "UPDATE noticia set titulo='{$_POST['titulo']}', noticia='{$_POST['corpo']}', idAutor={$_POST['autor']}, "
                     . "imagem='{$nomenovo}' where id={$_POST['id']} ";
         }
     }

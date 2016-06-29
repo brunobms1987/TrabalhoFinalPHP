@@ -15,12 +15,11 @@
                 include_once './verifica_logado.php';
                 $tipoUser = $_SESSION['tipoLogado'];
                 $id = $_SESSION['idLogado'];
-                if ($tipoUser == 1) {
-                    $resultado = busca($conexao, "SELECT id, titulo, noticia from noticia");
-                } else if ($tipoUser != 1) {
-                    $resultado = busca($conexao, "SELECT id, titulo, noticia from noticia where idAutor=$id");
-                }
-
+                //if ($tipoUser == 1) {
+                $resultado = busca($conexao, "SELECT id, titulo, idAutor, noticia from noticia");
+                //} else if ($tipoUser != 1) {
+                //    $resultado = busca($conexao, "SELECT id, titulo, noticia from noticia where idAutor=$id");
+                //}
                 //sou usuário comum??
                 // $resultado = busca($conexao, "SELECT id,nome, tipo from usuario where id=id de quem ta logado");
                 //para paginação
@@ -48,10 +47,16 @@
                         <td><?= $linha['titulo']; ?></td>                        
 
                         <td>
-                            <a  href="index.php?pag=12&id=<?= $linha['id']; ?>" title="Visualizar <?= $linha['nome']; ?>">Visualizar</a> |
-                            <a  href="index.php?pag=13&id=<?= $linha['id']; ?>" title="Editar <?= $linha['nome']; ?>">Editar</a> | 
-                            <a  href="noticias/apagar.php?id=<?= $linha['id']; ?>" title="Apagar <?= $linha['nome']; ?>">Apagar</a>
-
+                            <a  href="index.php?pag=12&id=<?= $linha['id']; ?>" title="Visualizar <?= $linha['nome']; ?>">Visualizar</a>
+                            <?=
+                            "";
+                            if ($tipoUser == 1 || $linha['idAutor'] == $id) {
+                                ?> | <a  href="index.php?pag=13&id=<?= $linha['id']; ?>" title="Editar <?= $linha['nome']; ?>">Editar</a> | 
+                                <a  href="noticias/apagar.php?id=<?= $linha['id']; ?>" title="Apagar <?= $linha['nome']; ?>">Apagar</a>
+                                <?=
+                                "";
+                            }
+                            ?>
                         </td>
                     </tr>
 
